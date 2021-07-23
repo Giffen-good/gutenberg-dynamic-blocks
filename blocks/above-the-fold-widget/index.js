@@ -9,7 +9,7 @@ const { __ } = wp.i18n
 const { registerBlockType } = wp.blocks
 const { RichText } = wp.blockEditor
  
- registerBlockType('davidyeiser-detailer/above-the-fold-widget', {
+ registerBlockType('chrisrock-gdb/above-the-fold-widget', {
    title: __( 'Above the Fold Widget' ),
    icon: icons.fifty6,
    category: 'custom',

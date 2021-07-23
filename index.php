@@ -3,17 +3,17 @@
  *  Bootstrap file to launch the plugin.
  *
  *  @wordpress-plugin
- *  Plugin Name: 56 Custom Blocks
+ *  Plugin Name: Gutenberg Dynamic Blocks
  *  Plugin URI:  https://github.com/Giffen-good
  *  Description: Plugin to create custom Gutenberg block, Book Details.
  *  Version:     0.1
- *  Author:      David Yeiser
- *  Author URI:  https://davidyeiser.com/
+ *  Author:      Christopher Rock
+ *  Author URI:  https://chrisrock.ca
  *  License:     GPL2+
  *  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-namespace DavidYeiser\Detailer;
+namespace ChrisRock\GDB;
 
 //  Exit if accessed directly.
 defined('ABSPATH') || exit;

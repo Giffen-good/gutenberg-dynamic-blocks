@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer\Blocks\InformationCard;
+namespace ChrisRock\GDB\Blocks\InformationCard;
 
 add_action('plugins_loaded', __NAMESPACE__ . '\register_dynamic_block');
 

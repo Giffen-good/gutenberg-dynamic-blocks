@@ -8,7 +8,7 @@ const { InspectorControls, MediaUpload, MediaUploadCheck, RichText } = wp.blockE
 const { Button, PanelBody, PanelRow, ToggleControl } = wp.components
 const { Component } = wp.element
 
-registerBlockType('davidyeiser-detailer/information-card', {
+registerBlockType('chrisrock-gdb/information-card', {
   title: __( 'Information Card' ),
   icon: icons.fifty6,
   category: 'custom',

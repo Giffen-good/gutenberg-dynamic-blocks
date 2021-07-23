@@ -9,7 +9,7 @@ const { __ } = wp.i18n
 const { registerBlockType } = wp.blocks
 const { RichText } = wp.blockEditor
 
-registerBlockType('davidyeiser-detailer/key-metrics-widget', {
+registerBlockType('chrisrock-gdb/key-metrics-widget', {
   title: __( 'Key Metrics Widget' ),
   icon: icons.fifty6,
   category: 'custom-block',

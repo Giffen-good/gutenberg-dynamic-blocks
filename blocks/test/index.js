@@ -8,7 +8,7 @@ import icons from '../icons'
  const { __ } = wp.i18n
  const { registerBlockType } = wp.blocks
  
- registerBlockType('davidyeiser-detailer/test', {
+ registerBlockType('chrisrock-gdb/test', {
    title: __( 'test' ),
    icon: icons.fifty6,
    category: 'custom',

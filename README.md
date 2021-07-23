@@ -1,11 +1,6 @@
 # Gutenberg Dynamic Blocks
 
-Hard Forked from David Yeiser's Dynamic Block builder plugin...
-
-A plugin for WordPress that creates a custom Gutenberg block called Book Details. It’s a companion setup for a two-part tutorial on creating custom dynamic Gutenberg blocks for Wordpress.
-
-- [Create Your Own Dynamic Gutenberg Block for Wordpress, Part 1](https://davidyeiser.com/tutorial/creating-custom-dynamic-gutenberg-block-wordpress-part1)
-- [Create Your Own Dynamic Gutenberg Block for Wordpress, Part 2](https://davidyeiser.com/tutorials/wordpress-dynamic-gutenberg-block-code-snippets)
+A plugin for building Dynamic Gutenberg Blocks along with a growing library of custom blocks for use within Wordpress.
 
 ## Credit
 The structure and setup of this repository is taken from [@davidyeiser/detailer](https://github.com/davidyeiser/detailer) who describes the build in depth here:

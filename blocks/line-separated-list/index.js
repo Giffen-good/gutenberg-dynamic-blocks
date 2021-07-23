@@ -13,7 +13,7 @@ const { InspectorControls, MediaUpload, MediaUploadCheck, RichText } = wp.blockE
 const { Button, PanelBody, PanelRow, ToggleControl } = wp.components
 const { Component } = wp.element
 
-registerBlockType('davidyeiser-detailer/line-separated-list', {
+registerBlockType('chrisrock-gdb/line-separated-list', {
   title: __( 'Line Separated List' ),
   icon: icons.fifty6,
   category: 'custom',

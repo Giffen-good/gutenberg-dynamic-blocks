@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer\Blocks\KeyMetricsWidget;
+namespace ChrisRock\GDB\Blocks\KeyMetricsWidget;
 
 add_action('plugins_loaded', __NAMESPACE__ . '\register_dynamic_block');
 

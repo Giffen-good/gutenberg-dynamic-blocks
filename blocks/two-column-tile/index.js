@@ -16,7 +16,7 @@ import icons from '../icons'
 ];
 
 // const blockProps = useBlockProps()
- registerBlockType('davidyeiser-detailer/two-column-tile', {
+ registerBlockType('chrisrock-gdb/two-column-tile', {
     apiVersion: 2,
    title: __( 'Two Column Tile' ),
    icon: icons.fifty6,

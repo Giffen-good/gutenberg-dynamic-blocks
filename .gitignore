@@ -1,0 +1,8 @@
+composer.lock
+node_modules/
+vendor/
+logs/
+reports/
+.history
+.DS_Store
+.DS_Store?

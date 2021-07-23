@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer\Blocks\TwoColumnImage;
+namespace ChrisRock\GDB\Blocks\TwoColumnImage;
 
 add_action('plugins_loaded', __NAMESPACE__ . '\register_dynamic_block');
 

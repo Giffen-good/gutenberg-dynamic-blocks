@@ -14,7 +14,7 @@ const { InspectorControls, MediaUpload, MediaUploadCheck, RichText } = wp.blockE
 const { Button, PanelBody, PanelRow, ToggleControl } = wp.components
 const { Component } = wp.element
 
-registerBlockType('davidyeiser-detailer/book-details', {
+registerBlockType('chrisrock-gdb/book-details', {
   title: __( 'Book Details' ),
   icon: icons.fifty6,
   category: 'custom',

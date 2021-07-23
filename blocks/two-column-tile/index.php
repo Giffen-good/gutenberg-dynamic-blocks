@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer\Blocks\TwoColumnTile;
+namespace ChrisRock\GDB\Blocks\TwoColumnTile;
 
 add_action('plugins_loaded', __NAMESPACE__ . '\register_dynamic_block');
 
@@ -12,7 +12,7 @@ function register_dynamic_block() {
 
   // Hook server side rendering into render callback
   // Make sure name matches registerBlockType in ./index.js
-  register_block_type('davidyeiser-detailer/two-column-tile', array(
+  register_block_type('chrisrock-gdb/two-column-tile', array(
     'render_callback' => __NAMESPACE__ . '\render_dynamic_block'
   ));
 }

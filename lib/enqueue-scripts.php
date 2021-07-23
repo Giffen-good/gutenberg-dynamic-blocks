@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer;
+namespace ChrisRock\GDB;
 
 /**
  *  Enqueue JavaScript and CSS

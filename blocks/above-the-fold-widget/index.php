@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer\Blocks\AboveTheFoldWidget;
+namespace ChrisRock\GDB\Blocks\AboveTheFoldWidget;
 
 add_action('plugins_loaded', __NAMESPACE__ . '\register_dynamic_block');
 

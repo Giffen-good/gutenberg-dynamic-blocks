@@ -1,6 +1,6 @@
 <?php
 
-namespace DavidYeiser\Detailer\Blocks\BookDetails;
+namespace ChrisRock\GDB\Blocks\BookDetails;
 
 add_action('plugins_loaded', __NAMESPACE__ . '\register_dynamic_block');
 

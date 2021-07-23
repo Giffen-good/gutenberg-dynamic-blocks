@@ -114,7 +114,7 @@
 //       </section>
 //     )
 // }
-// registerBlockType('davidyeiser-detailer/two-column-image', {
+// registerBlockType('chrisrock-gdb/two-column-image', {
 //     title: __( 'Two Column Image' ),
 //     icon: icons.fifty6,
 //     category: 'custom',

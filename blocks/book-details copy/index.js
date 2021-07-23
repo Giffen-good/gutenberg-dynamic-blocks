@@ -11,7 +11,7 @@ import icons from '../icons'
 
 
 
- registerBlockType('davidyeiser-detailer/example', {
+ registerBlockType('chrisrock-gdb/example', {
    title: __( 'Example' ),
    icon: icons.fifty6,
    category: 'custom',
