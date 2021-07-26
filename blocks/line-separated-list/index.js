@@ -1,8 +1,9 @@
 /**
- *  BLOCK: Line Seperated List 
+ *  BLOCK: 
  *  ---
- *  Line-seperated Repeater with heading and body
+ *  A brief description of the block
  */
+import icons from '../icons'
 
 // Used to make item ids
 import { nanoid } from 'nanoid'
@@ -18,8 +19,10 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
   icon: icons.fifty6,
   category: 'custom',
   keywords: [
-    __( 'line seperated list' ),
+    __( 'Line Separated List' ),
+    __( 'list' ),
     __( 'custom block' ),
+
   ],
 
   // Enable or disable support for low-level features
@@ -34,30 +37,9 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
 
   // Set up data model for custom block
   attributes: {
-    image: {
-      type: 'object',
-      selector: 'js-book-details-image'
-    },
-    title: {
-      type: 'string',
-      selector: 'js-book-details-title'
-    },
-    author: {
-      type: 'string',
-      selector: 'js-book-details-author'
-    },
-    summary: {
-      type: 'string',
-      selector: 'js-book-details-summary',
-      multiline: 'p'
-    },
-    haveRead: {
-      type: 'boolean',
-      selector: 'js-book-details-read'
-    },
-    quotes: {
+    listItems: {
       type: 'array',
-      selector: 'js-book-details-quotes'
+      selector: 'js-list-item'
     }
   },
 
@@ -66,9 +48,9 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
     constructor() {
       super(...arguments)
 
-      // Match current state to saved quotes (if they exist)
+      // Match current state to saved listItems (if they exist)
       this.state = {
-        quotes: this.props.attributes.quotes || []
+        listItems: this.props.attributes.listItems || []
       }
 
       this.addQuote = this.addQuote.bind(this)
@@ -80,8 +62,8 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
     addQuote(e) {
       e.preventDefault()
 
-      // get quotes from state
-      const { quotes } = this.state
+      // get listItems from state
+      const { listItems } = this.state
 
       // set up empty quote
       const emptyQuote = {
@@ -90,50 +72,50 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
         pageRef: ''
       }
 
-      // append new emptyQuote object to quotes
-      const newQuotes = [...quotes, emptyQuote]
+      // append new emptyQuote object to listItems
+      const newQuotes = [...listItems, emptyQuote]
 
       // save new placeholder to WordPress
-      this.props.setAttributes({ quotes: newQuotes })
+      this.props.setAttributes({ listItems: newQuotes })
 
       // and update state
-      return this.setState({ quotes: newQuotes })
+      return this.setState({ listItems: newQuotes })
     }
 
     // remove item
     removeQuote(e, index) {
       e.preventDefault()
 
-      // make a true copy of quotes
-      // const { quotes } = this.state does not work
-      const quotes = JSON.parse(JSON.stringify(this.state.quotes))
+      // make a true copy of listItems
+      // const { listItems } = this.state does not work
+      const listItems = JSON.parse(JSON.stringify(this.state.listItems))
 
       // remove specified item
-      quotes.splice(index, 1)
+      listItems.splice(index, 1)
 
-      // save updated quotes and update state (in callback)
+      // save updated listItems and update state (in callback)
       return (
         this.props.setAttributes(
-          { quotes: quotes },
-          this.setState({ quotes: quotes })
+          { listItems: listItems },
+          this.setState({ listItems: listItems })
         )
       )
     }
 
     // handler function to update quote
     editQuote(key, index, value) {
-      // make a true copy of quotes
-      const quotes = JSON.parse(JSON.stringify(this.state.quotes))
-      if (quotes.length === 0) return
+      // make a true copy of listItems
+      const listItems = JSON.parse(JSON.stringify(this.state.listItems))
+      if (listItems.length === 0) return
 
       // update value
-      quotes[index][key] = value
+      listItems[index][key] = value
 
       // save values in WordPress and update state (in callback)
       return (
         this.props.setAttributes(
-          { quotes: quotes },
-          this.setState({ quotes: quotes })
+          { listItems: listItems },
+          this.setState({ listItems: listItems })
         )
       )
     }
@@ -143,98 +125,34 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
       const { attributes, className, setAttributes } = this.props
 
       // Pull out specific attributes for clarity below
-      const { haveRead, image, quotes } = attributes
+      const { haveRead, image, listItems } = attributes
 
       return (
         <div className={className}>
-
-          {/* Sidebar Controls */}
-          <InspectorControls>
-            <PanelBody title={__('Book Status')}>
-              <PanelRow>
-                <ToggleControl
-                  className="js-book-details-read"
-                  label="Read"
-                  checked={haveRead}
-                  help={haveRead ? "This book has been read." : "Currently unread."}
-                  onChange={checked => setAttributes({ haveRead: checked })}
-                />
-              </PanelRow>
-            </PanelBody>
-          </InspectorControls>
-
-          <MediaUploadCheck>
-            <MediaUpload
-              className="js-book-details-image wp-admin-book-details-image"
-              allowedTypes={['image']}
-              multiple={false}
-              value={image ? image.id : ''}
-              onSelect={image => setAttributes({ image: image })}
-              render={({ open }) => (
-                image ?
-                  <div>
-                    <p>
-                      <img src={image.url} width={image.width / 2} />
-                    </p>
-
-                    <p>
-                      <Button onClick={() => setAttributes({ image: '' })} className="button is-small">Remove</Button>
-                    </p>
-                  </div> :
-                  <Button onClick={open} className="button">Upload Image</Button>
-              )}
-            />
-          </MediaUploadCheck>
-
-          <RichText
-            className="js-book-details-title wp-admin-book-details-title"
-            value={attributes.title}
-            onChange={value => setAttributes({ title: value })}
-            tagName="h3"
-            placeholder="Book title"
-          />
-
-          <RichText
-            className="js-book-details-author wp-admin-book-details-author"
-            value={attributes.author}
-            onChange={value => setAttributes({ author: value })}
-            tagName="span"
-            placeholder="Book author"
-          />
-
-          <RichText
-            className="js-book-details-summary wp-admin-book-details-summary"
-            value={attributes.summary}
-            onChange={value => setAttributes({ summary: value })}
-            tagName="div"
-            placeholder="Book summary"
-            multiline="p"
-          />
-
-          {!!quotes && quotes.map((quote, index) =>
-            <div key={quote.id || index} className="wp-admin-book-details-quote">
+          {!!listItems && listItems.map((item, index) =>
+            <div key={item.id || index} className="wp-admin-list-item">
               <RichText
-                className="wp-admin-book-details-quote-content"
-                value={quote.content}
+                className="wp-admin-book-heading"
+                value={item.content}
                 onChange={value => this.editQuote('content', index, value)}
                 tagName="div"
                 multiline="p"
-                placeholder="Quote"
+                placeholder="Heading"
               />
 
               <RichText
-                className="wp-admin-book-details-quote-page-ref"
-                value={quote.pageRef}
+                className="wp-admin-book-body"
+                value={item.pageRef}
                 onChange={value => this.editQuote('pageRef', index, value)}
                 tagName="p"
-                placeholder="Page number"
+                placeholder="Description"
               />
 
               <p>
                 <input
                   className="button-secondary button"
                   type="submit"
-                  value="Remove Quote"
+                  value="Remove List Item"
                   onClick={(e) => this.removeQuote(e, index)}
                 />
               </p>
@@ -245,7 +163,7 @@ registerBlockType('chrisrock-gdb/line-separated-list', {
             <input
               className="button-primary button"
               type="submit"
-              value="Add Quote"
+              value="Add List Item"
               onClick={(e) => this.addQuote(e)}
             />
           </p>

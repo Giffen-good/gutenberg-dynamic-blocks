@@ -34,10 +34,10 @@ import icons from '../icons'
     const { attributes, className, setAttributes } = props
     const TEMPLATE = [ [ 'core/columns', {}, [
         [ 'core/column', {}, [
-            [ 'core/image' ],
+            [ 'chrisrock-gdb/card' ],
         ] ],
         [ 'core/column', {}, [
-            [ 'core/paragraph', { placeholder: 'Enter side content...' } ],
+            [ 'chrisrock-gdb/card' ],
         ] ],
     ] ] ];
      return (

@@ -8,13 +8,13 @@ const { InspectorControls, MediaUpload, MediaUploadCheck, RichText } = wp.blockE
 const { Button, PanelBody, PanelRow, ToggleControl } = wp.components
 const { Component } = wp.element
 
-registerBlockType('chrisrock-gdb/information-card', {
-  title: __( 'Information Card' ),
+registerBlockType('chrisrock-gdb/card', {
+  title: __( 'Card' ),
   icon: icons.fifty6,
   category: 'custom',
   keywords: [
     __( 'info' ),
-    __( 'information card' ),
+    __( 'card' ),
     __( 'custom widget' ),
   ],
 
@@ -63,7 +63,7 @@ registerBlockType('chrisrock-gdb/information-card', {
 
           <MediaUploadCheck>
             <MediaUpload
-              className="js-info-image wp-admin-book-details-image"
+              className="js-info-image wp-admin-card-image"
               allowedTypes={['image']}
               multiple={false}
               value={image ? image.id : ''}

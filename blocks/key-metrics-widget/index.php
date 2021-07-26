@@ -12,7 +12,7 @@ function register_dynamic_block() {
 
   // Hook server side rendering into render callback
   // Make sure name matches registerBlockType in ./index.js
-  register_block_type('davidyeiser-detailer/key-metrics-widget', array(
+  register_block_type('chrisrock-gdb/key-metrics-widget', array(
     'render_callback' => __NAMESPACE__ . '\render_dynamic_block'
   ));
 }

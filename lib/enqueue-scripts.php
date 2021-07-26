@@ -43,8 +43,8 @@ add_filter( 'block_categories', function( $categories, $post ) {
       $categories,
       array(
           array(
-              'slug'  => __('custom-blocks', ),
-              'title' => 'Custom Blocks',
+              'slug'  => __('custom', 'Gutenberg Dynamic Blocks'),
+              'title' => 'Custom',
           ),
       )
   );

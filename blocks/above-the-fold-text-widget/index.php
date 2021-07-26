@@ -12,7 +12,7 @@ function register_dynamic_block() {
 
   // Hook server side rendering into render callback
   // Make sure name matches registerBlockType in ./index.js
-  register_block_type('davidyeiser-detailer/above-the-fold-widget', array(
+  register_block_type('chrisrock-gdb/above-the-fold-text-widget', array(
     'render_callback' => __NAMESPACE__ . '\render_dynamic_block'
   ));
 }
@@ -25,7 +25,7 @@ function render_dynamic_block($attributes) {
     ob_start(); // Turn on output buffering
   ?>
 <section>
-    <div class="above-the-fold-widget section-margin-big tac">
+    <div class="above-the-fold-text-widget section-margin-big tac">
         <h1 class="fs-4 section-header"> <?php echo $smallHeading; ?></h1>
         <h3 class="fs-2 ff-2"><?php echo $tagline; ?></h3>
         <p class=""><?php echo $body; ?></p>

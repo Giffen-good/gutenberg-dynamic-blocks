@@ -12,7 +12,7 @@ const { RichText } = wp.blockEditor
 registerBlockType('chrisrock-gdb/key-metrics-widget', {
   title: __( 'Key Metrics Widget' ),
   icon: icons.fifty6,
-  category: 'custom-block',
+  category: 'custom',
   keywords: [
     __( 'key metrics' ),
     __( 'podium' ),

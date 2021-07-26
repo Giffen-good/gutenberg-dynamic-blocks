@@ -5,7 +5,7 @@
  *  @wordpress-plugin
  *  Plugin Name: Gutenberg Dynamic Blocks
  *  Plugin URI:  https://github.com/Giffen-good
- *  Description: Plugin to create custom Gutenberg block, Book Details.
+ *  Description: Library of Dynamic block types for Gutenberg.
  *  Version:     0.1
  *  Author:      Christopher Rock
  *  Author URI:  https://chrisrock.ca
@@ -39,12 +39,13 @@ include __DIR__ . '/lib/enqueue-scripts.php';
 
 // Load dynamic blocks
 include __DIR__ . '/blocks/book-details/index.php';
-include __DIR__ . '/blocks/above-the-fold-widget/index.php';
-include __DIR__ . '/blocks/information-card/index.php';
+include __DIR__ . '/blocks/above-the-fold-text-widget/index.php';
+include __DIR__ . '/blocks/card/index.php';
 include __DIR__ . '/blocks/key-metrics-widget/index.php';
 include __DIR__ . '/blocks/two-column-image/index.php';
+include __DIR__ . '/blocks/line-separated-list/index.php';
+
 // include __DIR__ . '/blocks/two-column-tile/index.php';
-// include __DIR__ . '/blocks/line-separated-list/index.php';
 
 
 
